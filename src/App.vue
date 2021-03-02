@@ -50,12 +50,9 @@ export default {
     font-family: 'SenBold'
     src: url('/fonts/Sen-Bold.ttf')
 #app
-    font-family: Avenir, Helvetica, Arial, sans-serif
+    font-family: 'SenRegular'
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale
-    text-align: center
-    color: #2c3e50
-    margin-top: 60px
 .panel
     height: 100vh
 .second
