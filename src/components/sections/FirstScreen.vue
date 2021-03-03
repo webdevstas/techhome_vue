@@ -17,13 +17,6 @@ export default {};
 </script>
 
 <style lang="sass">
-body
-  margin: 0
-  padding: 0
-  background-color: #171727
-  font-family: 'SenRegular'
-.container
-  padding: 0 300px
 .first__screen
   height: 100vh
   position: relative
