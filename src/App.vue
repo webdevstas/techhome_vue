@@ -1,10 +1,10 @@
 <template>
-  <Header />
+  <Header @onLangChange="changeLangHandler($event)" :lang="lang" />
   <FirstScreen />
   <Software />
   <Games />
   <Future />
-  <Team />
+  <Team :lang="lang" />
   <Footer />
 </template>
 
@@ -28,9 +28,63 @@ export default {
     Games,
     Future,
     Team,
-    Footer
+    Footer,
+  },
+  data() {
+    return {
+      lang: this.getCookie("lang"),
+    };
+  },
+  computed: {},
+  methods: {
+    changeLangHandler(lang) {
+      this.lang = lang;
+      this.setCoockie("lang", lang);
+    },
+
+    getCookie(name) {
+      let matches = document.cookie.match(
+        new RegExp(
+          "(?:^|; )" +
+            name.replace(/([.$?*|{}()[\]\\/+^])/g, "\\$1") +
+            "=([^;]*)"
+        )
+      );
+      return matches ? decodeURIComponent(matches[1]) : undefined;
+    },
+
+    setCoockie(name, value, options = {}) {
+      options = {
+        path: "/",
+        samesite: "Strict",
+        // при необходимости добавьте другие значения по умолчанию
+        ...options,
+      };
+
+      if (options.expires instanceof Date) {
+        options.expires = options.expires.toUTCString();
+      }
+
+      let updatedCookie =
+        encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+      for (let optionKey in options) {
+        updatedCookie += "; " + optionKey;
+        let optionValue = options[optionKey];
+        if (optionValue !== true) {
+          updatedCookie += "=" + optionValue;
+        }
+      }
+
+      document.cookie = updatedCookie;
+    },
   },
   mounted() {
+
+    if (!this.getCookie('lang')) {
+      this.setCoockie('lang', 'en')
+    }
+
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.utils.toArray(".panel").forEach((panel) => {
@@ -39,6 +93,7 @@ export default {
         start: "top top",
         pin: true,
         pinSpacing: false,
+        refreshPriority: 1,
       });
     });
   },
@@ -58,6 +113,7 @@ export default {
 @font-face
   font-family: 'SenBold'
   src: url('/fonts/Sen-Bold.ttf')
+
 body
   margin: 0
   padding: 0

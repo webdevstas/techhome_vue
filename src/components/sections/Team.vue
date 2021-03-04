@@ -1,4 +1,5 @@
 <template>
+{{lang}}
   <section class="panel team" id="team">
     <div class="container">
       <h2 class="section__title">team</h2>
@@ -17,10 +18,16 @@
 
 <script>
 export default {
+  props: ['lang'],
   data: () => ({}),
   computed: {
     team() {
-      return this.$store.getters.team;
+      if (this.lang === 'ru') {
+        return this.$store.getters['team/ru']
+      }
+      else {
+        return this.$store.getters['team/en']
+      }
     },
   },
 };
