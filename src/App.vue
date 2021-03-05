@@ -1,14 +1,14 @@
 <template>
-<div :style="{
+  <div :style="{
     fontFamily: lang == 'en' ? 'SenRegular' : 'RobotoRegular'
 }">
-  <Header @onLangChange="changeLangHandler($event)" :lang="lang" :langData="getLangData('header')" />
-  <FirstScreen :langData="getLangData('firstScreen')" />
-  <Software :langData="getLangData('software')" />
-  <Games :langData="getLangData('games')" />
-  <Future :langData="getLangData('future')" />
-  <Team :lang="lang" :langData="getLangData('team')" />
-  <Footer :langData="getLangData('footer')" />
+    <Header @onLangChange="changeLangHandler($event)" :lang="lang" :langData="getLangData('header')"/>
+    <FirstScreen :langData="getLangData('firstScreen')"/>
+    <Software :langData="getLangData('software')"/>
+    <Games :langData="getLangData('games')"/>
+    <Future :langData="getLangData('future')"/>
+    <Team :lang="lang" :langData="getLangData('team')"/>
+    <Footer :langData="getLangData('footer')"/>
   </div>
 </template>
 
@@ -20,8 +20,8 @@ import Games from "./components/sections/Games";
 import Future from "./components/sections/Future";
 import Team from "./components/sections/Team";
 import Footer from "./components/sections/Footer";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import {gsap} from "gsap";
+import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 
 export default {
   name: "App",
@@ -39,9 +39,7 @@ export default {
       lang: this.getCookie("lang"),
     };
   },
-  computed: {
-
-  },
+  computed: {},
   methods: {
 
     getLangData(section) {
@@ -59,11 +57,11 @@ export default {
 
     getCookie(name) {
       let matches = document.cookie.match(
-        new RegExp(
-          "(?:^|; )" +
-            name.replace(/([.$?*|{}()[\]\\/+^])/g, "\\$1") +
-            "=([^;]*)"
-        )
+          new RegExp(
+              "(?:^|; )" +
+              name.replace(/([.$?*|{}()[\]\\/+^])/g, "\\$1") +
+              "=([^;]*)"
+          )
       );
       return matches ? decodeURIComponent(matches[1]) : undefined;
     },
@@ -81,7 +79,7 @@ export default {
       }
 
       let updatedCookie =
-        encodeURIComponent(name) + "=" + encodeURIComponent(value);
+          encodeURIComponent(name) + "=" + encodeURIComponent(value);
 
       for (let optionKey in options) {
         updatedCookie += "; " + optionKey;
@@ -119,12 +117,15 @@ export default {
 @font-face
   font-family: 'RobotoRegular'
   src: url('/fonts/Roboto-Regular.ttf')
+
 @font-face
   font-family: 'RobotoBold'
   src: url('/fonts/Roboto-Bold.ttf')
+
 @font-face
   font-family: 'SenRegular'
   src: url('/fonts/Sen-Regular.ttf')
+
 @font-face
   font-family: 'SenBold'
   src: url('/fonts/Sen-Bold.ttf')
@@ -134,16 +135,19 @@ body
   padding: 0
   background-color: #171727
   color: #d9d9d9
-  
+
 .container
   padding: 0 300px
+
 #app
   // font-family: 'SenRegular'
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
+
 section
   height: 100vh
   padding: 50px 0
+
 .section__title
   font-size: 40px
 </style>

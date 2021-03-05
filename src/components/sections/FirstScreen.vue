@@ -1,32 +1,34 @@
 <template>
-  <section class="first__screen panel" id="firstScreen">
-    <div class="container">
-      <div class="first__screen-slogan">
-        <span v-for="str in langData.slogan" :key="str">{{str}}</span>
-      </div>
-    </div>
-  </section>
+    <section class="first__screen panel" id="firstScreen">
+        <div class="container">
+            <div class="first__screen-slogan">
+                <span v-for="str in langData.slogan" :key="str">{{ str }}</span>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script>
 export default {
-  props: ['langData']
+    props: ['langData']
 };
 </script>
 
 <style lang="sass">
 .first__screen
-  height: 100vh
-  position: relative
-  &-slogan
-    font-size: 46px
-    color: #d9d9d9
-    text-transform: uppercase
-    letter-spacing: 8px
-    font-family: 'RobotoBold'
-    text-align: start
+    height: 100vh
     position: relative
-    top: 40vh
-    & span
-      display: block
+
+    &-slogan
+        font-size: 46px
+        color: #d9d9d9
+        text-transform: uppercase
+        letter-spacing: 8px
+        font-family: 'RobotoBold'
+        text-align: start
+        position: relative
+        top: 40vh
+
+        & span
+            display: block
 </style>

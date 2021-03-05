@@ -18,4 +18,4 @@ const getters = {
         return state.en
     }
 }
-export default { state, getters }
+export default {state, getters}

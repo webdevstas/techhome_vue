@@ -1,14 +1,14 @@
 <template>
-  <section class="panel software" id="software">
-    <div class="container">
-      <h2 class="section__title">{{ langData.title }}</h2>
-    </div>
-  </section>
+    <section class="panel software" id="software">
+        <div class="container">
+            <h2 class="section__title">{{ langData.title }}</h2>
+        </div>
+    </section>
 </template>
 
 <script>
 export default {
-  props: ["langData"],
+    props: ["langData"],
 };
 </script>
 

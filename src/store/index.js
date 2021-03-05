@@ -40,18 +40,10 @@ export default createStore({
             ...footerModule
         },
     },
-    state: {
-        
-    },
-    mutations: {
-        
-    },
-    getters: {
-        
-    },
-    actions: {
-        
-    },
+    state: {},
+    mutations: {},
+    getters: {},
+    actions: {},
     strict: debug,
     plugins: debug ? [createLogger()] : []
 })
