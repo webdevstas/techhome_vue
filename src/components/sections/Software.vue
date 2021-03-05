@@ -1,13 +1,15 @@
 <template>
   <section class="panel software" id="software">
     <div class="container">
-      <h2 class="section__title">software</h2>
+      <h2 class="section__title">{{ langData.title }}</h2>
     </div>
   </section>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["langData"],
+};
 </script>
 
 <style lang="sass">

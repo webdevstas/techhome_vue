@@ -1,19 +1,17 @@
 <template>
-  <section class="first__screen panel">
+  <section class="first__screen panel" id="firstScreen">
     <div class="container">
       <div class="first__screen-slogan">
-        We're an independent <br />
-        development studio. <br />
-        We make SOFTWARE. <br />
-        We make games. <br />
-        We make future.
+        <span v-for="str in langData.slogan" :key="str">{{str}}</span>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ['langData']
+};
 </script>
 
 <style lang="sass">
@@ -28,6 +26,7 @@ export default {};
     font-family: 'RobotoBold'
     text-align: start
     position: relative
-    top: 50vh
-    transform: translateY(-50%)
+    top: 40vh
+    & span
+      display: block
 </style>

@@ -1,10 +1,9 @@
 <template>
-{{lang}}
   <section class="panel team" id="team">
     <div class="container">
-      <h2 class="section__title">team</h2>
+      <h2 class="section__title">{{langData.title}}</h2>
       <div class="team__grid">
-        <div class="team__item" v-for="person in team" :key="person.name">
+        <div class="team__item" v-for="person in langData.persons" :key="person.name">
           <img :src="person.icon" alt="" class="team__img" />
           <div class="team__text">
             <span class="team__name">{{ person.name }}</span>
@@ -18,18 +17,16 @@
 
 <script>
 export default {
-  props: ['lang'],
-  data: () => ({}),
+  props: ['langData'],
+  data: () => ({
+    
+  }),
   computed: {
-    team() {
-      if (this.lang === 'ru') {
-        return this.$store.getters['team/ru']
-      }
-      else {
-        return this.$store.getters['team/en']
-      }
-    },
+    
   },
+  methods: {
+
+  }
 };
 </script>
 

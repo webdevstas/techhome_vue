@@ -1,16 +1,15 @@
 <template>
-  <header class="header">
-    <div class="header-logo">
+  <header class="header" :style="{
+    fontFamily: lang == 'en' ? 'SenBold' : 'RobotoBold'
+  }">
+    <div class="header-logo" v-scroll-to="'#firstScreen'">
       <img src="/images/logo.svg" alt="" class="header-logo__img" />
     </div>
     <div class="header-menu">
       <ul class="header-menu__list">
-        <li class="header-menu__item" v-scroll-to="'#software'">software</li>
-        <li class="header-menu__item" v-scroll-to="'#games'">games</li>
-        <li class="header-menu__item" v-scroll-to="'#future'">future</li>
-        <li class="header-menu__item" v-scroll-to="'#team'">team</li>
+        <li class="header-menu__item" v-for="(item, key) in langData.menuItems" :key="item" v-scroll-to="`#${key}`" @mouseenter="animMenuItem($event)">{{item}}</li>
         <li class="header-menu__item">
-          <img src="/images/translate.png" alt="" class="translate-icon" @click="changeLang"/>
+          <img src="/images/translate.png" alt="" class="translate-icon" @click="changeLang($event)"/>
         </li>
       </ul>
     </div>
@@ -18,18 +17,48 @@
 </template>
 
 <script>
+import gsap from 'gsap/all';
+// import { gsap } from 'gsap'
 export default {
-  props: ['lang'],
+  props: ['lang', 'langData'],
   methods: {
-    changeLang() {
-        if (this.lang === 'en') {
-            this.$emit('onLangChange', 'ru')
+
+    animMenuItem(event) {
+      gsap.to(event.target, {
+        y: -5,
+        yoyo:true,
+        repeat: 1,
+        ease: 'bounce.in',
+        onComplete: () => {
+          gsap.to(event.target, {
+            y: 0
+          })
         }
-        else {
-            this.$emit('onLangChange', 'en')
-        }
+      })
+    },
+
+    changeLang(event) {
+
+      gsap.to(event.target, {
+          rotation: 180,
+          ease: 'back',
+          yoyo: true,
+          onComplete: () => {
+              gsap.to(event.target, {
+                  rotate: 0
+              })
+
+            if (this.lang === 'en') {
+                this.$emit('onLangChange', 'ru')
+            }
+            else {
+                this.$emit('onLangChange', 'en')
+            }
+          }
+      })
     },
   },
+  
   mounted() {
 
   },
@@ -42,28 +71,29 @@ export default {
     flex-direction: row
     align-items: center
     justify-content: space-between
-    padding: 20px 300px
+    padding: 10px 300px
     position: fixed
     left: 0
     top: 0
-    width: calc(100vw - 620px)
+    width: calc(100vw - 615px)
     z-index: 1000
+    background-color: rgba(255, 255, 255, .1)
     &-logo
         display: block
         width: 80px
         height: auto
+        cursor: pointer
     &-menu
         &__list
             margin: 0
             display: flex
             flex-direction: row
-            width: 450px
+            width: 500px
             justify-content: space-around
             list-style: none
         &__item
             font-size: 24px
             color: #d9d9d9
-            font-family: 'SenBold'
             cursor: pointer
 .translate-icon
     width: 30px

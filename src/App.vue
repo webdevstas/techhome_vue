@@ -1,16 +1,20 @@
 <template>
-  <Header @onLangChange="changeLangHandler($event)" :lang="lang" />
-  <FirstScreen />
-  <Software />
-  <Games />
-  <Future />
-  <Team :lang="lang" />
-  <Footer />
+<div :style="{
+    fontFamily: lang == 'en' ? 'SenRegular' : 'RobotoRegular'
+}">
+  <Header @onLangChange="changeLangHandler($event)" :lang="lang" :langData="getLangData('header')" />
+  <FirstScreen :langData="getLangData('firstScreen')" />
+  <Software :langData="getLangData('software')" />
+  <Games :langData="getLangData('games')" />
+  <Future :langData="getLangData('future')" />
+  <Team :lang="lang" :langData="getLangData('team')" />
+  <Footer :langData="getLangData('footer')" />
+  </div>
 </template>
 
 <script>
-import FirstScreen from "./components/sections/FirstScreen";
 import Header from "./components/sections/Header";
+import FirstScreen from "./components/sections/FirstScreen";
 import Software from "./components/sections/Software";
 import Games from "./components/sections/Games";
 import Future from "./components/sections/Future";
@@ -35,8 +39,19 @@ export default {
       lang: this.getCookie("lang"),
     };
   },
-  computed: {},
+  computed: {
+
+  },
   methods: {
+
+    getLangData(section) {
+      if (this.lang === "ru") {
+        return this.$store.getters[`${section}/ru`];
+      } else {
+        return this.$store.getters[`${section}/en`];
+      }
+    },
+
     changeLangHandler(lang) {
       this.lang = lang;
       this.setCoockie("lang", lang);
@@ -79,10 +94,10 @@ export default {
       document.cookie = updatedCookie;
     },
   },
-  mounted() {
 
-    if (!this.getCookie('lang')) {
-      this.setCoockie('lang', 'en')
+  mounted() {
+    if (!this.getCookie("lang")) {
+      this.setCoockie("lang", "en");
     }
 
     gsap.registerPlugin(ScrollTrigger);
@@ -118,12 +133,12 @@ body
   margin: 0
   padding: 0
   background-color: #171727
-  font-family: 'SenRegular'
   color: #d9d9d9
+  
 .container
   padding: 0 300px
 #app
-  font-family: 'SenRegular'
+  // font-family: 'SenRegular'
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 section
@@ -131,5 +146,4 @@ section
   padding: 50px 0
 .section__title
   font-size: 40px
-  font-family: 'SenBold'
 </style>
