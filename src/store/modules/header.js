@@ -3,7 +3,7 @@ const state = () => {
         ru: {
             menuItems: {
                 software: 'программы',
-                games: 'игры',
+                games: '<span class="red">игры</span>',
                 future: 'будущее',
                 team: 'команда'
             }
@@ -11,7 +11,7 @@ const state = () => {
         en: {
             menuItems: {
                 software: 'software',
-                games: 'games',
+                games: '<span class="red">games</span>',
                 future: 'future',
                 team: 'team'
             }

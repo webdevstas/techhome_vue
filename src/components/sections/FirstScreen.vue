@@ -2,7 +2,7 @@
     <section class="first__screen panel" id="firstScreen">
         <div class="container">
             <div class="first__screen-slogan">
-                <span v-for="str in langData.slogan" :key="str">{{ str }}</span>
+                <span v-for="str in langData.slogan" :key="str" v-html="str"></span>
             </div>
         </div>
     </section>
@@ -31,4 +31,7 @@ export default {
 
         & span
             display: block
+.red
+  display: inline !important
+  color: rgb(220, 72, 62)
 </style>

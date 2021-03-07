@@ -19,6 +19,11 @@ const state = () => {
                     icon: '/images/melyakin.png'
                 },
                 {
+                    name: 'Михаил Гордеев',
+                    role: 'Game designer',
+                    icon: '/images/gordeev.png'
+                },
+                {
                     name: 'Станислав Спирин',
                     role: 'Fullstack web-разработчик',
                     icon: '/images/spirin.png'
@@ -33,6 +38,11 @@ const state = () => {
                     role: 'C# программист',
                     icon: '/images/kovalev.png'
                 },
+                {
+                    name: 'Ярослав Моцарт',
+                    role: 'Sound designer',
+                    icon: '/images/kovalenko.png'
+                }
             ],
         },
         en: {
@@ -54,6 +64,11 @@ const state = () => {
                     icon: '/images/melyakin.png'
                 },
                 {
+                    name: 'Mikhail Gordeev',
+                    role: 'Game designer',
+                    icon: '/images/gordeev.png'
+                },
+                {
                     name: 'Stanislav Spirin',
                     role: 'Web disigner',
                     icon: '/images/spirin.png'
@@ -67,6 +82,11 @@ const state = () => {
                     name: 'Andrey Kovalev',
                     role: 'C# programmer',
                     icon: '/images/kovalev.png'
+                },
+                {
+                    name: 'Yroslav Mocart',
+                    role: 'Sound designer',
+                    icon: '/images/kovalenko.png'
                 },
             ],
         }

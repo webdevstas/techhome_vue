@@ -1,10 +1,10 @@
 const state = () => {
     return {
         ru: {
-            slogan: ['мы - независимая IT студия.', 'мы создаём программы.', 'мы создаём игры.', 'мы создаём будущее.']
+            slogan: ['мы - независимая IT студия.', 'мы создаём программы.', 'мы создаём <span class="red">игры.</span>', 'мы создаём будущее.']
         },
         en: {
-            slogan: ['We\'re an independent', 'development studio.', 'We make SOFTWARE.', 'We make games.', 'We make future.']
+            slogan: ['We\'re an independent', 'development studio.', 'We make SOFTWARE.', 'We make <span class="red">games.</span>', 'We make future.']
         }
     }
 }

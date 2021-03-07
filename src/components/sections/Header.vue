@@ -9,8 +9,7 @@
             <ul class="header-menu__list">
                 <li class="header-menu__item" v-for="(item, key) in langData.menuItems" :key="item"
                     v-scroll-to="`#${key}`"
-                    @mouseenter="animMenuItem($event)">{{ item }}
-                </li>
+                    @mouseenter="animMenuItem($event)" v-html="item"></li>
                 <li class="header-menu__item">
                     <img src="/images/translate.png" alt="" class="translate-icon" @click="changeLang($event)"/>
                 </li>
@@ -78,9 +77,6 @@ export default {
     top: 0
     width: calc(100vw - 600px)
     z-index: 1000
-    background-color: rgba(255, 255, 255, .1)
-    backdrop-filter: hue-rotate(15deg) blur(15px)
-
     &-logo
         display: block
         width: 80px

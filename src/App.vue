@@ -1,8 +1,9 @@
+<!--suppress CssUnknownTarget -->
 <template>
   <div :style="{
-    fontFamily: lang == 'en' ? 'SenRegular' : 'RobotoRegular'
+    fontFamily: lang === 'en' ? 'SenRegular' : 'RobotoRegular'
 }">
-    <Header @onLangChange="changeLangHandler($event)" :lang="lang" :langData="getLangData('header')"/>
+    <Header @onLangChange="changeLangHandler($event)" :lang="lang" :langData="getLangData('header')" :style="{backgroundColor: headerBg}"/>
     <FirstScreen :langData="getLangData('firstScreen')"/>
     <Software :langData="getLangData('software')"/>
     <Games :langData="getLangData('games')"/>
@@ -37,6 +38,7 @@ export default {
   data() {
     return {
       lang: this.getCookie("lang"),
+      headerBg: ''
     };
   },
   computed: {},
@@ -52,7 +54,7 @@ export default {
 
     changeLangHandler(lang) {
       this.lang = lang;
-      this.setCoockie("lang", lang);
+      this.setCookie("lang", lang);
     },
 
     getCookie(name) {
@@ -66,7 +68,7 @@ export default {
       return matches ? decodeURIComponent(matches[1]) : undefined;
     },
 
-    setCoockie(name, value, options = {}) {
+    setCookie(name, value, options = {}) {
       options = {
         path: "/",
         samesite: "Strict",
@@ -91,11 +93,21 @@ export default {
 
       document.cookie = updatedCookie;
     },
+
+    changeHeaderBg(el) {
+      if (el.id === 'firstScreen') {
+        this.headerBg = 'transparent'
+      } else if (el.id === 'games' || el.id === 'team') {
+        this.headerBg = '#212139'
+      } else {
+        this.headerBg = '#171727'
+      }
+    }
   },
 
   mounted() {
     if (!this.getCookie("lang")) {
-      this.setCoockie("lang", "en");
+      this.setCookie("lang", "en");
     }
 
     gsap.registerPlugin(ScrollTrigger);
@@ -106,7 +118,12 @@ export default {
         start: "top top",
         pin: true,
         pinSpacing: false,
-        refreshPriority: 1,
+        onEnter: (tr) => {
+          this.changeHeaderBg(tr.trigger)
+        },
+        onEnterBack: (tr) => {
+          this.changeHeaderBg(tr.trigger)
+        }
       });
     });
   },
