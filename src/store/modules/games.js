@@ -1,19 +1,21 @@
-const state = () => {
-    return {
-        ru: {
-            title: 'игры'
+export default {
+    namespaced: true,
+    state() {
+        return {
+            ru: {
+                title: 'игры'
+            },
+            en: {
+                title: 'games'
+            }
+        }
+    },
+    getters: {
+        ru: (state) => {
+            return state.ru
         },
-        en: {
-            title: 'games'
+        en: (state) => {
+            return state.en
         }
     }
 }
-const getters = {
-    ru: (state) => {
-        return state.ru
-    },
-    en: (state) => {
-        return state.en
-    }
-}
-export default {state, getters}

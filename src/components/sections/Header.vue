@@ -19,19 +19,19 @@
 </template>
 
 <script>
-import gsap from 'gsap';
 export default {
     props: ['lang', 'langData'],
+    emits: ['onLangChange'],
     methods: {
 
         animMenuItem(event) {
-            gsap.to(event.target, {
+            this.gsap.to(event.target, {
                 y: -5,
                 yoyo: true,
                 repeat: 1,
                 ease: 'bounce.in',
                 onComplete: () => {
-                    gsap.to(event.target, {
+                    this.gsap.to(event.target, {
                         y: 0
                     })
                 }
@@ -40,12 +40,12 @@ export default {
 
         changeLang(event) {
 
-            gsap.to(event.target, {
+            this.gsap.to(event.target, {
                 rotation: 180,
                 ease: 'back',
                 yoyo: true,
                 onComplete: () => {
-                    gsap.to(event.target, {
+                    this.gsap.to(event.target, {
                         rotate: 0
                     })
 
@@ -57,10 +57,6 @@ export default {
                 }
             })
         },
-    },
-
-    mounted() {
-
     },
 };
 </script>
@@ -77,6 +73,7 @@ export default {
     top: 0
     width: calc(100vw - 600px)
     z-index: 1000
+
     &-logo
         display: block
         width: 80px

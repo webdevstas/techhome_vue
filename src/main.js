@@ -2,7 +2,7 @@ import {createApp} from 'vue'
 import App from './App.vue'
 import store from './store'
 import VueScrollTo from 'vue-scrollto'
-
+import gsap from './plugins/gsap'
 
 const app = createApp(App)
 
@@ -12,5 +12,5 @@ app.use(VueScrollTo, {
     easing: 'ease-in',
     force: false
 })
-app.config.devtools = true
+app.use(gsap)
 app.mount('#app')

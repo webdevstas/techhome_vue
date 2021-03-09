@@ -12,31 +12,24 @@ const debug = process.env.NODE_ENV !== 'production'
 export default createStore({
     modules: {
         team: {
-            namespaced: true,
             ...teamModule
         },
         header: {
-            namespaced: true,
             ...headerModule
         },
         firstScreen: {
-            namespaced: true,
             ...firstScreenModule
         },
         software: {
-            namespaced: true,
             ...softwareModule
         },
         games: {
-            namespaced: true,
             ...gamesModule
         },
         future: {
-            namespaced: true,
             ...futureModule
         },
         footer: {
-            namespaced: true,
             ...footerModule
         },
     },

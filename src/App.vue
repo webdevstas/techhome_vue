@@ -3,26 +3,34 @@
   <div :style="{
     fontFamily: lang === 'en' ? 'SenRegular' : 'RobotoRegular'
 }">
-    <Header @onLangChange="changeLangHandler($event)" :lang="lang" :langData="getLangData('header')" :style="{backgroundColor: headerBg}"/>
-    <FirstScreen :langData="getLangData('firstScreen')"/>
-    <Software :langData="getLangData('software')"/>
-    <Games :langData="getLangData('games')"/>
-    <Future :langData="getLangData('future')"/>
-    <Team :lang="lang" :langData="getLangData('team')"/>
-    <Footer :langData="getLangData('footer')"/>
+    <Header
+        @onLangChange="changeLangHandler($event)"
+        :lang="lang"
+        :langData="getLangData('header')"
+        :style="{backgroundColor: headerBg}"/>
+    <FirstScreen
+        :langData="getLangData('firstScreen')"/>
+    <Software
+        :langData="getLangData('software')"/>
+    <Games
+        :langData="getLangData('games')"/>
+    <Future
+        :langData="getLangData('future')"/>
+    <Team
+        :langData="getLangData('team')"/>
+    <Footer
+        :langData="getLangData('footer')"/>
   </div>
 </template>
 
 <script>
-import Header from "./components/sections/Header";
-import FirstScreen from "./components/sections/FirstScreen";
-import Software from "./components/sections/Software";
-import Games from "./components/sections/Games";
-import Future from "./components/sections/Future";
-import Team from "./components/sections/Team";
-import Footer from "./components/sections/Footer";
-import {gsap} from "gsap";
-import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
+import Header from "./components/sections/Header"
+import FirstScreen from "./components/sections/FirstScreen"
+import Software from "./components/sections/Software"
+import Games from "./components/sections/Games"
+import Future from "./components/sections/Future"
+import Team from "./components/sections/Team"
+import Footer from "./components/sections/Footer"
 
 export default {
   name: "App",
@@ -105,15 +113,14 @@ export default {
     }
   },
 
-  mounted() {
-    if (!this.getCookie("lang")) {
-      this.setCookie("lang", "en");
-    }
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.utils.toArray(".panel").forEach((panel) => {
-      ScrollTrigger.create({
+    created() {
+        if (!this.getCookie("lang")) {
+            this.setCookie("lang", "en");
+        }
+    },
+    mounted() {
+    this.gsap.utils.toArray(".panel").forEach((panel) => {
+      this.ScrollTrigger.create({
         trigger: panel,
         start: "top top",
         pin: true,
@@ -157,7 +164,6 @@ body
   padding: 0 300px
 
 #app
-  // font-family: 'SenRegular'
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 

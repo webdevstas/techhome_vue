@@ -1,30 +1,33 @@
-const state = () => {
-    return {
-        ru: {
-            menuItems: {
-                software: 'программы',
-                games: '<span class="red">игры</span>',
-                future: 'будущее',
-                team: 'команда'
+export default {
+    namespaced: true,
+    state() {
+        return {
+            ru: {
+                menuItems: {
+                    software: 'программы',
+                    games: '<span class="red">игры</span>',
+                    future: 'будущее',
+                    team: 'команда'
+                }
+            },
+            en: {
+                menuItems: {
+                    software: 'software',
+                    games: '<span class="red">games</span>',
+                    future: 'future',
+                    team: 'team'
+                }
             }
+        }
+    },
+    getters: {
+        ru: (state) => {
+            return state.ru
         },
-        en: {
-            menuItems: {
-                software: 'software',
-                games: '<span class="red">games</span>',
-                future: 'future',
-                team: 'team'
-            }
+        en: (state) => {
+            return state.en
         }
     }
 }
-const getters = {
-    ru: (state) => {
-        return state.ru
-    },
-    en: (state) => {
-        return state.en
-    }
-}
-export default {state, getters}
+
 
