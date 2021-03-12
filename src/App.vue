@@ -118,6 +118,7 @@ export default {
             this.setCookie("lang", "en");
         }
     },
+
     mounted() {
     this.gsap.utils.toArray(".panel").forEach((panel) => {
       this.ScrollTrigger.create({

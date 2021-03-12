@@ -10,7 +10,8 @@ app.use(store)
 app.use(VueScrollTo, {
     duration: 500,
     easing: 'ease-in',
-    force: false
+    force: false,
+    offset: 2
 })
 app.use(gsap)
 app.mount('#app')
