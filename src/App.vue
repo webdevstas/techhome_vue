@@ -45,13 +45,17 @@ export default {
   },
   data() {
     return {
-      lang: this.getCookie("lang"),
+      lang: '',
       headerBg: ''
     };
   },
   computed: {},
   methods: {
-
+    /**
+     * Получение из store локализованных данных
+     * @param {string} section
+     * @returns {Object} Объект локализованных данных
+     */
     getLangData(section) {
       if (this.lang === "ru") {
         return this.$store.getters[`${section}/ru`];
@@ -60,11 +64,20 @@ export default {
       }
     },
 
+    /**
+     * Функция смены языка, устанавливает локальное свойство this.lang и устанавливает куку
+     * @param {string} lang
+     */
     changeLangHandler(lang) {
       this.lang = lang;
       this.setCookie("lang", lang);
     },
 
+    /**
+     * Функция получения значения куки
+     * @param {string} name
+     * @returns {string|undefined}
+     */
     getCookie(name) {
       let matches = document.cookie.match(
           new RegExp(
@@ -76,6 +89,12 @@ export default {
       return matches ? decodeURIComponent(matches[1]) : undefined;
     },
 
+    /**
+     * Функция устанавливает куку
+     * @param {string} name
+     * @param {string|number} value
+     * @param {Object} options
+     */
     setCookie(name, value, options = {}) {
       options = {
         path: "/",
@@ -102,6 +121,10 @@ export default {
       document.cookie = updatedCookie;
     },
 
+    /**
+     * Функция изменения цвета header в зависимости от секции
+     * @param {Element} el
+     */
     changeHeaderBg(el) {
       if (el.id === 'firstScreen') {
         this.headerBg = 'transparent'
@@ -120,6 +143,7 @@ export default {
   },
 
   mounted() {
+    this.lang = this.getCookie("lang")
     this.gsap.utils.toArray(".panel").forEach((panel) => {
       this.ScrollTrigger.create({
         trigger: panel,

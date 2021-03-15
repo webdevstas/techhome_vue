@@ -54,7 +54,6 @@ export default {
     },
 
     changeLang(event) {
-
       this.gsap.to(event.target, {
         rotation: 180,
         ease: 'back',

@@ -19,8 +19,12 @@ export default {
   },
 
   methods: {
-    showAlert () {
-      const openPromise = new Promise((resolve, reject) => {
+    /**
+     * Показывает alert, скрывает с указанной задержкой
+     * @param {number} timeout
+     */
+    showAlert (timeout = 5000) {
+      const openPromise = new Promise((resolve) => {
         this.visible = true
         resolve()
       })
@@ -28,12 +32,15 @@ export default {
         this.gsap.to('.alert', {
           y: 600,
           onComplete: () => {
-            this.timeout = setTimeout(this.closeAlert, 5000)
+            this.timeout = setTimeout(this.closeAlert, timeout)
           }
         })
       })
     },
 
+    /**
+     * Скрывает alert, чистит локальное свойство this.timeout, сообщает родительскому компоненту
+     */
     closeAlert () {
       this.gsap.to('.alert', {
         y: -600,
