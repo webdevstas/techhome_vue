@@ -28,13 +28,13 @@ export default {
 
   &-text
     width: 60%
-    font-size: 46px
+    font-size: 40px
     font-weight: bold
   &-img
     width: 20%
 @media (max-width: 992px)
   .software-text
-    font-size: 40px
+    font-size: 38px
 @media (max-width: 768px)
   .software-text
     font-size: 32px

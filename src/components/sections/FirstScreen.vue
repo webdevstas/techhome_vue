@@ -31,6 +31,10 @@ export default {
         & span
             display: block
 
+@media (max-width: 992px)
+  .first__screen-slogan
+    font-size: 40px
+    top: 30vh
 @media (max-width: 768px)
   .first__screen-slogan
     font-size: 40px
