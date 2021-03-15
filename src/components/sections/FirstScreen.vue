@@ -16,7 +16,6 @@ export default {
 
 <style lang="sass">
 .first__screen
-    height: 100vh
     position: relative
 
     &-slogan
@@ -31,7 +30,13 @@ export default {
 
         & span
             display: block
-.red
-  display: inline !important
-  color: rgb(220, 72, 62)
+
+@media (max-width: 768px)
+  .first__screen-slogan
+    font-size: 40px
+    top: 20vh
+@media (max-width: 576px)
+  .first__screen-slogan
+    font-size: 32px
+    top: 10vh
 </style>

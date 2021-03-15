@@ -77,4 +77,11 @@ export default {
         width: 100%
         text-align: center
         color: #b3b3b3
+@media (max-width: 768px)
+  .footer
+    &-grid
+      grid-template-columns: 1fr
+      gap: 50px
+    &-contacts
+      align-items: center
 </style>

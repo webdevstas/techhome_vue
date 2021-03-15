@@ -5,15 +5,23 @@
     <div class="header-logo" v-scroll-to="'#firstScreen'">
       <img src="/images/logo.svg" alt="" class="header-logo__img"/>
     </div>
-    <div class="header-menu">
+    <div class="header-menu" ref="menu">
       <ul class="header-menu__list">
-        <li class="header-menu__item" v-for="(item, key) in langData.menuItems" :key="item"
+        <li class="header-menu__item"
+            v-for="(item, key) in langData.menuItems"
+            :key="item"
             v-scroll-to="`#${key}`"
             @mouseenter="animMenuItem($event)" v-html="item"></li>
         <li class="header-menu__item">
           <img src="/images/translate.png" alt="" class="translate-icon" @click="changeLang($event)"/>
         </li>
       </ul>
+    </div>
+    <div class="backdrop" ref="backdrop" @click="closeMobileMenu"></div>
+    <div class="header-burger" @click="openMobileMenu">
+      <div class="header-burger__item"></div>
+      <div class="header-burger__item"></div>
+      <div class="header-burger__item"></div>
     </div>
   </header>
 </template>
@@ -22,6 +30,12 @@
 export default {
   props: ['lang', 'langData'],
   emits: ['onLangChange'],
+
+  data() {
+    return {
+      mobileMenuOpened: false
+    }
+  },
 
   methods: {
 
@@ -58,6 +72,45 @@ export default {
         }
       })
     },
+
+    openMobileMenu() {
+      this.mobileMenuOpened = true
+
+      const backdrop = this.$refs.backdrop
+      const menu = this.$refs.menu
+
+      menu.style.display = 'block'
+      backdrop.style.display = 'block'
+
+      this.gsap.to(backdrop, {
+        x: 2000,
+        onComplete: () => {
+          this.gsap.to(menu, {
+            x: 1000
+          })
+        }
+      })
+    },
+
+    closeMobileMenu() {
+      this.mobileMenuOpened = false
+
+      const backdrop = this.$refs.backdrop
+      const menu = this.$refs.menu
+
+      this.gsap.to(menu, {
+        x: -1000,
+        onComplete: () => {
+          this.gsap.to(backdrop, {
+            x: -2000,
+            onComplete: () => {
+              menu.style.display = 'none'
+              backdrop.style.display = 'none'
+            }
+          })
+        }
+      })
+    }
   },
 };
 </script>
@@ -82,6 +135,8 @@ export default {
     cursor: pointer
 
   &-menu
+    z-index: 200
+
     &__list
       margin: 0
       display: flex
@@ -95,7 +150,69 @@ export default {
       color: #d9d9d9
       cursor: pointer
 
+  &-burger
+    width: 30px
+    height: auto
+    display: none
+    cursor: pointer
+
+    &__item
+      border-bottom: 2px solid #fff
+      margin-bottom: 5px
+
 .translate-icon
   width: 30px
   height: auto
+
+.backdrop
+  position: fixed
+  left: -2000px
+  top: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0, 0, 0.4)
+  backdrop-filter: blur(3px)
+  z-index: 100
+  display: none
+  cursor: pointer
+
+@media (max-width: 1200px)
+  .header
+    padding: 10px 100px
+    width: calc(100vw - 200px)
+
+@media (max-width: 992px)
+  .header
+    padding: 10px 50px
+    width: calc(100vw - 100px)
+
+@media (max-width: 768px)
+  .header
+    padding: 10px 20px
+    width: calc(100vw - 40px)
+
+@media (max-width: 576px)
+  .header
+    padding: 10px
+    width: calc(100vw - 20px)
+
+    &-menu
+      display: none
+      position: fixed
+      left: -1000px
+      top: 0
+      height: 100vh
+      width: 200px
+      background-color: rgba(34, 27, 86, 0.9)
+      backdrop-filter: blur(10px)
+      padding-top: 50px
+
+      &__list
+        flex-direction: column
+        width: auto
+        justify-content: space-around
+        height: 30%
+
+    &-burger
+      display: block
 </style>

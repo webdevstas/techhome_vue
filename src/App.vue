@@ -113,13 +113,13 @@ export default {
     }
   },
 
-    created() {
-        if (!this.getCookie("lang")) {
-            this.setCookie("lang", "en");
-        }
-    },
+  created() {
+    if (!this.getCookie("lang")) {
+      this.setCookie("lang", "en");
+    }
+  },
 
-    mounted() {
+  mounted() {
     this.gsap.utils.toArray(".panel").forEach((panel) => {
       this.ScrollTrigger.create({
         trigger: panel,
@@ -173,5 +173,23 @@ section
   padding: 50px 0
 
 .section__title
-  font-size: 40px
+  font-size: 34px
+  text-transform: uppercase
+
+.red
+  display: inline !important
+  color: rgb(220, 72, 62)
+
+@media (max-width: 1200px)
+  .container
+    padding: 0 100px
+
+@media (max-width: 992px)
+  .container
+    padding: 0 50px
+
+@media (max-width: 768px)
+  .container
+    padding: 0 20px
+
 </style>

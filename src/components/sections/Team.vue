@@ -43,7 +43,8 @@ export default {
     flex-direction: column
     align-items: center
     position: relative
-
+    & span
+      text-align: center
   &__img
     width: 120px
     height: auto
@@ -61,5 +62,33 @@ export default {
 
   &-link
     position: absolute
-    right: 90px
+    right: 25%
+@media (max-width: 992px)
+  .team
+    &__grid
+      top: 10vh
+  .instagram
+    &-link
+      right: 10%
+@media (max-width: 576px)
+  .team
+    &__grid
+      top: 0
+      grid-template-columns: repeat(3, 1fr)
+      gap: 5px
+  .instagram
+    &-link
+      right: 10%
+@media (max-width: 420px)
+  .team
+    &__item
+      margin-bottom: 10px
+    &__img
+      width: 80px
+      margin-bottom: 5px
+    &__text
+      font-size: 14px
+  .instagram
+    &-logo
+      width: 20px
 </style>
