@@ -15,7 +15,7 @@ export default {
                         name: 'Антон Добрыгин',
                         role: 'Основатель',
                         icon: '/images/dobrygin.png',
-                        insta: ''
+                        insta: 'https://instagram.com/qwerty_nv'
                     },
                     {
                         name: 'Александр Мелякин',
@@ -51,7 +51,7 @@ export default {
                         name: 'Ярослав Прокип',
                         role: 'Sound designer',
                         icon: '/images/kovalenko.png',
-                        insta: ''
+                        insta: 'https://instagram.com/rurich777'
                     }
                 ],
             },
@@ -68,7 +68,7 @@ export default {
                         name: 'Anton Dobrygin',
                         role: 'Founder',
                         icon: '/images/dobrygin.png',
-                        insta: ''
+                        insta: 'https://instagram.com/qwerty_nv'
                     },
                     {
                         name: 'Alexander Melyakin',
@@ -104,7 +104,7 @@ export default {
                         name: 'Yaroslav Prokip',
                         role: 'Sound designer',
                         icon: '/images/kovalenko.png',
-                        insta: ''
+                        insta: 'https://instagram.com/rurich777'
                     },
                 ],
             }

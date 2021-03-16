@@ -30,27 +30,24 @@ export default {
     width: 60%
     font-size: 40px
     font-weight: bold
+
   &-img
     width: 20%
+
 @media (max-width: 992px)
   .software-text
     font-size: 38px
+
 @media (max-width: 768px)
   .software-text
     font-size: 32px
+
 @media (max-width: 576px)
   .software
     &-text
       font-size: 28px
-      width: 50%
-    &-img
-      width: 30%
-@media (max-width: 400px)
-  .software
-    &-text
-      font-size: 28px
-      top: 20vh
       width: 100%
+      top: 20vh
       position: relative
     &-img
       display: none

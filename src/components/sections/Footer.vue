@@ -84,4 +84,6 @@ export default {
       gap: 50px
     &-contacts
       align-items: center
+      &__address
+        text-align: center
 </style>

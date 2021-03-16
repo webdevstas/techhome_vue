@@ -217,8 +217,10 @@ section
     padding: 0 20px
   .section__title
     font-size: 30px
+
+
+@media (max-width: 576px)
   section
     padding: 20px 0
-
 
 </style>
