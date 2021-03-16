@@ -37,7 +37,8 @@ export default {
     display: grid
     grid-template-columns: repeat(4, 1fr)
     grid-row-gap: 50px
-
+  &__role
+    color: cornflowerblue
   &__item
     display: flex
     flex-direction: column
