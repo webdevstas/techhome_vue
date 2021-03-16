@@ -23,7 +23,10 @@ export default {
     &-slogan
       font-family: 'RobotoBold'
       text-transform: uppercase
-      font-size: 30px
+      font-size: 36px
       position: relative
       top: 30vh
+@media (max-width: 768px)
+  .future-slogan
+    font-size: 30px
 </style>
