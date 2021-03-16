@@ -17,12 +17,12 @@
         </li>
       </ul>
     </div>
-    <div class="backdrop" ref="backdrop" @click="closeMobileMenu"></div>
-    <div class="header-burger" @click="openMobileMenu">
-      <div class="header-burger__item"></div>
-      <div class="header-burger__item"></div>
-      <div class="header-burger__item"></div>
-    </div>
+<!--    <div class="backdrop" ref="backdrop" @click="closeMobileMenu"></div>-->
+<!--    <div class="header-burger" @click="openMobileMenu">-->
+<!--      <div class="header-burger__item"></div>-->
+<!--      <div class="header-burger__item"></div>-->
+<!--      <div class="header-burger__item"></div>-->
+<!--    </div>-->
   </header>
 </template>
 
@@ -195,23 +195,44 @@ export default {
     padding: 10px
     width: calc(100vw - 20px)
 
+    &-logo
+      width: 40px
+      height: 20px
+      &__img
+        height: 100%
     &-menu
-      display: none
-      position: fixed
-      left: -1000px
-      top: 0
-      height: 100vh
-      width: 200px
-      background-color: rgba(34, 27, 86, 0.9)
-      backdrop-filter: blur(10px)
-      padding-top: 50px
+      width: -moz-available
+      width: -webkit-fill-available
 
       &__list
-        flex-direction: column
-        width: auto
+        width: 100%
+        padding: 0
+        flex-wrap: wrap
         justify-content: space-around
-        height: 30%
-
-    &-burger
-      display: block
+      &__item
+        font-size: 13px
+        display: flex
+        align-items: center
+  .translate-icon
+    width: 20px
+  //burger and left menu
+    //&-menu
+    //  display: none
+    //  position: fixed
+    //  left: -1000px
+    //  top: 0
+    //  height: 100vh
+    //  width: 200px
+    //  background-color: rgba(34, 27, 86, 0.9)
+    //  backdrop-filter: blur(10px)
+    //  padding-top: 50px
+    //
+    //  &__list
+    //    flex-direction: column
+    //    width: auto
+    //    justify-content: space-around
+    //    height: 30%
+    //
+    //&-burger
+    //  display: block
 </style>

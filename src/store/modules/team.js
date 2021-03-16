@@ -48,7 +48,7 @@ export default {
                         insta: ''
                     },
                     {
-                        name: 'Ярослав Моцарт',
+                        name: 'Ярослав Прокип',
                         role: 'Sound designer',
                         icon: '/images/kovalenko.png',
                         insta: ''
@@ -101,7 +101,7 @@ export default {
                         insta: ''
                     },
                     {
-                        name: 'Yroslav Mocart',
+                        name: 'Yaroslav Prokip',
                         role: 'Sound designer',
                         icon: '/images/kovalenko.png',
                         insta: ''

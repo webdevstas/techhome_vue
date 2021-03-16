@@ -2,7 +2,7 @@
     <section class="panel future" id="future">
         <div class="container">
             <h2 class="section__title">{{ langData.title }}</h2>
-            <div class="first__screen-slogan">
+            <div class="future-slogan">
                 <span>
                   {{ langData.slogan }}
                 </span>
@@ -20,4 +20,10 @@ export default {
 <style lang="sass">
 .future
     background-color: #212139
+    &-slogan
+      font-family: 'RobotoBold'
+      text-transform: uppercase
+      font-size: 30px
+      position: relative
+      top: 30vh
 </style>

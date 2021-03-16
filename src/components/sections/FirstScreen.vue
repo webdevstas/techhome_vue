@@ -41,6 +41,6 @@ export default {
     top: 20vh
 @media (max-width: 576px)
   .first__screen-slogan
-    font-size: 32px
-    top: 10vh
+    font-size: 26px
+    top: 30vh
 </style>

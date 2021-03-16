@@ -48,8 +48,10 @@ export default {
 @media (max-width: 400px)
   .software
     &-text
-      font-size: 30px
+      font-size: 28px
+      top: 20vh
       width: 100%
+      position: relative
     &-img
       display: none
 </style>

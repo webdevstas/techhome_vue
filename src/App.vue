@@ -197,8 +197,8 @@ section
   padding: 50px 0
 
 .section__title
-  font-size: 34px
-  text-transform: uppercase
+  font-size: 38px
+  text-align: center
 
 .red
   display: inline !important
@@ -215,5 +215,10 @@ section
 @media (max-width: 768px)
   .container
     padding: 0 20px
+  .section__title
+    font-size: 30px
+  section
+    padding: 20px 0
+
 
 </style>
