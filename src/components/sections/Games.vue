@@ -42,7 +42,7 @@ export default {
   &-bg
     width: 100%
     height: 90%
-    background: url("/images/games-vertical.jpg") no-repeat center
+    background: url("/images/games-vertical.jpg") no-repeat top
     background-size: contain
 @media (max-width: 768px)
   .games-img__wrap
