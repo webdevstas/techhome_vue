@@ -215,9 +215,6 @@ section
 @media (max-width: 768px)
   .container
     padding: 0 20px
-  .section__title
-    font-size: 30px
-
 
 @media (max-width: 576px)
   section
