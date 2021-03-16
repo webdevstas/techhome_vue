@@ -194,10 +194,10 @@ body
 
 section
   height: 100vh
-  padding: 50px 0
+  padding: 60px 0
 
 .section__title
-  font-size: 38px
+  font-size: 24px
   text-align: center
 
 .red

@@ -1,7 +1,11 @@
 <template>
   <section class="panel team" id="team">
     <div class="container">
-      <h2 class="section__title">{{ langData.title }}</h2>
+      <h2 class="section__title" :style="{
+          fontFamily: $root.lang === 'en' ? 'SenBold' : 'RobotoBold'
+      }">
+        {{ langData.title }}
+      </h2>
       <div class="team-grid">
         <div class="team-item" v-for="person in langData.persons" :key="person.name">
           <div class="team-img__wrap">

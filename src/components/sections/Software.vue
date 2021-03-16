@@ -1,7 +1,11 @@
 <template>
   <section class="panel software" id="software">
     <div class="container">
-      <h2 class="section__title">{{ langData.title }}</h2>
+      <h2 class="section__title" :style="{
+          fontFamily: $root.lang === 'en' ? 'SenBold' : 'RobotoBold'
+      }">
+        {{ langData.title }}
+      </h2>
       <div class="software-row">
         <p class="software-text" v-html="langData.text"></p>
         <img src="@/assets/10003.png" alt="" class="software-img">
