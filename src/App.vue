@@ -218,6 +218,6 @@ section
 
 @media (max-width: 576px)
   section
-    padding: 20px 0
+    padding: 30px 0
 
 </style>
