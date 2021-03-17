@@ -142,7 +142,7 @@ export default {
       margin: 0
       display: flex
       flex-direction: row
-      width: 500px
+      width: 450px
       justify-content: space-around
       list-style: none
 
@@ -164,6 +164,7 @@ export default {
 .translate-icon
   width: 30px
   height: auto
+  cursor: pointer
 
 .backdrop
   position: fixed

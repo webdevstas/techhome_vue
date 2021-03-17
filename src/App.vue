@@ -126,7 +126,6 @@ export default {
           updatedCookie += "=" + optionValue;
         }
       }
-
       document.cookie = updatedCookie;
     },
 
@@ -163,7 +162,6 @@ export default {
         start: "top top",
         pin: true,
         pinSpacing: false,
-        anticipatePin: 0.5,
         onEnter: (tr) => {
           this.changeHeaderBg(tr.trigger)
         },
