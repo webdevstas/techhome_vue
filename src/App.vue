@@ -11,9 +11,13 @@
     <FirstScreen
         :langData="getLangData('firstScreen')"/>
     <Software
-        :langData="getLangData('software')"/>
+        :langData="getLangData('software')"
+        :client-width="clientWidth"
+    />
     <Games
-        :langData="getLangData('games')"/>
+        :langData="getLangData('games')"
+        :is-mobile="isMobile"
+    />
     <Future
         :langData="getLangData('future')"/>
     <Team
@@ -46,10 +50,15 @@ export default {
   data() {
     return {
       lang: '',
-      headerBg: ''
+      headerBg: '',
+      clientWidth: document.documentElement.getBoundingClientRect().width
     };
   },
-  computed: {},
+
+  computed: {
+    isMobile()  {return this.clientWidth < 768}
+  },
+
   methods: {
     /**
      * Получение из store локализованных данных
@@ -127,10 +136,14 @@ export default {
      */
     changeHeaderBg(el) {
       if (el.id === 'firstScreen') {
-        this.headerBg = 'transparent'
+        this.headerBg = '#171727'
       } else if (el.id === 'games' || el.id === 'team') {
         this.headerBg = '#212139'
-      } else {
+      }
+      else if (el.id === 'software') {
+        this.headerBg = '#000'
+      }
+      else {
         this.headerBg = '#171727'
       }
     }
@@ -150,16 +163,22 @@ export default {
         start: "top top",
         pin: true,
         pinSpacing: false,
+        anticipatePin: 0.5,
         onEnter: (tr) => {
           this.changeHeaderBg(tr.trigger)
         },
         onEnterBack: (tr) => {
           this.changeHeaderBg(tr.trigger)
         }
-      });
-    });
+      })
+    })
+
+    window.addEventListener('resize', () => {
+      const rect = document.documentElement.getBoundingClientRect()
+      this.clientWidth = rect.width
+    })
   },
-};
+}
 </script>
 
 <style lang="sass">
@@ -184,6 +203,7 @@ body
   padding: 0
   background-color: #171727
   color: #d9d9d9
+  overflow-x: hidden
 
 .container
   padding: 0 300px

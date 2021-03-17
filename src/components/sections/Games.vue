@@ -16,19 +16,16 @@
 
 <script>
 export default {
-  props: ['langData'],
+  props: ['langData', 'isMobile'],
 
   data() {
     return {
-      isMobile: document.documentElement.getBoundingClientRect().width < 768
+
     }
   },
 
   mounted() {
-    window.addEventListener('resize', () => {
-      const rect = document.documentElement.getBoundingClientRect()
-      this.isMobile = rect.width < 768
-    })
+
   }
 };
 </script>
@@ -36,7 +33,6 @@ export default {
 <style lang="sass">
 .games
   background-color: #171727
-
   &-img
     max-width: 100%
   &-bg

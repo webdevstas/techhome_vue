@@ -21,87 +21,88 @@
       </div>
     </div>
   </section>
-  </template>
+</template>
 
-  <script>
-    export default {
-      props: ['langData'],
-      data: () => ({}),
-      computed: {},
-      methods: {}
-    };
-  </script>
+<script>
+export default {
+  props: ['langData'],
+  data: () => ({}),
+  computed: {},
+  methods: {}
+};
+</script>
 
-  <style lang="sass">
-    .team
-      background-color: #171727
+<style lang="sass">
+.team
+  background-color: #171727
+  position: relative
+
+  &-grid
+    top: 15vh
+    position: relative
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-row-gap: 50px
+
+  &-role
+    color: cornflowerblue
+
+  &-item
+    display: flex
+    flex-direction: column
+    align-items: center
+    position: relative
+
+    & span
+      text-align: center
+
+  &-img
+    width: 120px
+    height: auto
+    margin-bottom: 20px
+
+    &__wrap
       position: relative
 
-      &-grid
-        top: 15vh
-        position: relative
-        display: grid
-        grid-template-columns: repeat(4, 1fr)
-        grid-row-gap: 50px
+  &-text
+    display: flex
+    flex-direction: column
+    align-items: center
 
-      &-role
-        color: cornflowerblue
+.instagram
 
-      &-item
-        display: flex
-        flex-direction: column
-        align-items: center
-        position: relative
+  &-logo
+    width: 40px
 
-        & span
-          text-align: center
+  &-link
+    position: absolute
+    right: -20px
 
-      &-img
-        width: 120px
-        height: auto
-        margin-bottom: 20px
-        &__wrap
-          position: relative
-      &-text
-        display: flex
-        flex-direction: column
-        align-items: center
+@media (max-width: 992px)
+  .team
+    &-grid
+      top: 10vh
 
-    .instagram
+@media (max-width: 576px)
+  .team
+    &-grid
+      top: 0
+      grid-template-columns: repeat(3, 1fr)
+      gap: 5px
 
-      &-logo
-        width: 40px
+    &-item
+      margin-bottom: 10px
 
-      &-link
-        position: absolute
-        right: -20px
+    &-img
+      width: 80px
+      margin-bottom: 5px
 
-    @media (max-width: 992px)
-      .team
-        &-grid
-          top: 10vh
+    &-text
+      font-size: 14px
+  .instagram
+    &-link
+      right: -5px
 
-    @media (max-width: 576px)
-      .team
-        &-grid
-          top: 0
-          grid-template-columns: repeat(3, 1fr)
-          gap: 5px
-
-    @media (max-width: 420px)
-      .team
-        &-item
-          margin-bottom: 10px
-
-        &-img
-          width: 80px
-          margin-bottom: 5px
-
-        &-text
-          font-size: 14px
-      .instagram
-        &-link
-          right: -5px
-        &-logo
-          width: 20px
-  </style>
+    &-logo
+      width: 20px
+</style>

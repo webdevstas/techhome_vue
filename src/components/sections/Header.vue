@@ -126,6 +126,7 @@ export default {
   top: 0
   width: calc(100vw - 600px)
   z-index: 1000
+  transition: .5s
 
   &-logo
     display: block

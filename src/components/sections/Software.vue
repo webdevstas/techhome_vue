@@ -16,13 +16,58 @@
 
 <script>
 export default {
-  props: ["langData"],
+  props: ['langData', 'clientWidth'],
+
+  data() {
+    return {}
+  },
+
+  mounted() {
+    if (this.clientWidth > 576) {
+      this.gsap.to('.software-img', {
+        scrollTrigger: {
+          trigger: '.software',
+          // markers: true,
+          scrub: 1,
+          start: '100 top'
+        },
+        scale: 4,
+        y: 500,
+        x: this.clientWidth < 768 ? -220 : 0
+      })
+    }
+    else {
+      this.gsap.to('.software-img', {
+        scrollTrigger: {
+          trigger: '.software',
+          // markers: true,
+          scrub: 0.5,
+          start: '100 top'
+        },
+        scale: 3,
+        y: -200
+      })
+
+      this.gsap.to('.software-text', {
+        scrollTrigger: {
+          trigger: '.software',
+          // markers: true,
+          scrub: 0.5,
+          start: '100 top'
+        },
+        y: -500,
+        opacity: 0
+      })
+    }
+  }
 };
 </script>
 
 <style lang="sass">
 .software
-  background-color: #212139
+  background-color: #fff
+  height: 1500px
+  color: #222222
 
   &-row
     display: flex
@@ -40,19 +85,31 @@ export default {
 
 @media (max-width: 992px)
   .software-text
-    font-size: 38px
+    font-size: 34px
 
 @media (max-width: 768px)
-  .software-text
-    font-size: 32px
+  .software
+    &-text
+      font-size: 28px
+      position: relative
+
+    &-img
+      position: relative
+      width: 30%
 
 @media (max-width: 576px)
   .software
+    height: 1500px
+    overflow: hidden
+    &-row
+      flex-direction: column
     &-text
       font-size: 28px
       width: 100%
       top: 20vh
-      position: relative
+
     &-img
-      display: none
+      width: 50%
+      position: relative
+      top: 20vh
 </style>

@@ -34,5 +34,5 @@ export default {
 
 @media (max-width: 768px)
   .future-slogan
-    font-size: 30px
+    font-size: 26px
 </style>
