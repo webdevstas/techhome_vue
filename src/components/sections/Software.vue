@@ -1,7 +1,7 @@
 <template>
   <section class="panel software" id="software">
     <div class="container">
-      <h2 class="section__title" :style="{
+      <h2 class="section__title slide" :style="{
           fontFamily: $root.lang === 'en' ? 'SenBold' : 'RobotoBold'
       }">
         {{ langData.title }}
@@ -37,15 +37,28 @@ export default {
       })
     }
     else {
-      this.gsap.to('.software-img', {
+      let tl = new this.gsap.timeline
+      tl.to('.software-img', {
         scrollTrigger: {
           trigger: '.software',
           // markers: true,
           scrub: 0.5,
-          start: '100 top'
+          start: 'top+=20 top',
+          end: 'center-=500px top'
         },
-        scale: 3,
-        y: -200
+        scale: 1.5,
+        // y: -200
+      })
+
+      tl.to('.software-img', {
+        scrollTrigger: {
+          trigger: '.software',
+          // markers: true,
+          scrub: 0.5,
+          start: 'center-=501px top',
+          end: 'center-=200 top'
+        },
+        y: -350
       })
 
       this.gsap.to('.software-text', {
@@ -53,9 +66,9 @@ export default {
           trigger: '.software',
           // markers: true,
           scrub: 0.5,
-          start: '100 top'
+          start: '100 top',
+          end: 'center-=400px top'
         },
-        y: -500,
         opacity: 0
       })
     }
@@ -99,7 +112,7 @@ export default {
 
 @media (max-width: 576px)
   .software
-    height: 1500px
+    height: 1200px
     overflow: hidden
     &-row
       flex-direction: column
@@ -109,7 +122,7 @@ export default {
       top: 20vh
 
     &-img
-      width: 50%
+      width: 45%
       position: relative
       top: 20vh
 </style>
