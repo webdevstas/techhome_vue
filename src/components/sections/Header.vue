@@ -12,17 +12,15 @@
             :key="item"
             v-scroll-to="`#${key}`"
             @mouseenter="animMenuItem($event)" v-html="item"></li>
-        <li class="header-menu__item">
-          <img src="/images/translate.png" alt="" class="translate-icon" @click="changeLang($event)"/>
-        </li>
       </ul>
+      <img src="/images/translate.png" alt="" class="translate-icon" @click="changeLang($event)"/>
     </div>
-<!--    <div class="backdrop" ref="backdrop" @click="closeMobileMenu"></div>-->
-<!--    <div class="header-burger" @click="openMobileMenu">-->
-<!--      <div class="header-burger__item"></div>-->
-<!--      <div class="header-burger__item"></div>-->
-<!--      <div class="header-burger__item"></div>-->
-<!--    </div>-->
+    <!--    <div class="backdrop" ref="backdrop" @click="closeMobileMenu"></div>-->
+    <!--    <div class="header-burger" @click="openMobileMenu">-->
+    <!--      <div class="header-burger__item"></div>-->
+    <!--      <div class="header-burger__item"></div>-->
+    <!--      <div class="header-burger__item"></div>-->
+    <!--    </div>-->
   </header>
 </template>
 
@@ -136,7 +134,10 @@ export default {
 
   &-menu
     z-index: 200
-
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
     &__list
       margin: 0
       display: flex
@@ -199,41 +200,44 @@ export default {
     &-logo
       width: 40px
       height: 20px
+
       &__img
         height: 100%
+
     &-menu
       width: -moz-available
       width: -webkit-fill-available
 
       &__list
-        width: 100%
+        width: 250px
         padding: 0
         flex-wrap: wrap
         justify-content: space-around
+        margin: auto
       &__item
         font-size: 13px
         display: flex
         align-items: center
   .translate-icon
     width: 20px
-  //burger and left menu
-    //&-menu
-    //  display: none
-    //  position: fixed
-    //  left: -1000px
-    //  top: 0
-    //  height: 100vh
-    //  width: 200px
-    //  background-color: rgba(34, 27, 86, 0.9)
-    //  backdrop-filter: blur(10px)
-    //  padding-top: 50px
-    //
-    //  &__list
-    //    flex-direction: column
-    //    width: auto
-    //    justify-content: space-around
-    //    height: 30%
-    //
-    //&-burger
-    //  display: block
+//burger and left menu
+  //&-menu
+  //  display: none
+  //  position: fixed
+  //  left: -1000px
+  //  top: 0
+  //  height: 100vh
+  //  width: 200px
+  //  background-color: rgba(34, 27, 86, 0.9)
+  //  backdrop-filter: blur(10px)
+  //  padding-top: 50px
+  //
+  //  &__list
+  //    flex-direction: column
+  //    width: auto
+  //    justify-content: space-around
+  //    height: 30%
+  //
+  //&-burger
+  //  display: block
 </style>
