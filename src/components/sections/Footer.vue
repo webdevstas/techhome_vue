@@ -92,4 +92,7 @@ export default {
 
       &__address
         text-align: center
+    &-logo
+      &__img
+        height: 30px
 </style>

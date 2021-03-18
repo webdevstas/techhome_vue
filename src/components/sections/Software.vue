@@ -58,7 +58,7 @@ export default {
           start: 'center-=501px top',
           end: 'center-=200 top'
         },
-        y: -350
+        y: -380
       })
 
       this.gsap.to('.software-text', {
