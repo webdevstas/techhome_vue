@@ -68,7 +68,7 @@ export default {
       display: flex
       flex-direction: row
       justify-content: space-around
-      width: 60%
+      width: 65%
       margin: auto
 
     &__img
@@ -80,7 +80,11 @@ export default {
     text-align: center
     color: #b3b3b3
     font-size: 11px
-
+@media (max-width: 1200px)
+  .footer
+    &-logo
+      &__block
+        width: 100%
 @media (max-width: 768px)
   .footer
     &-grid
@@ -93,6 +97,19 @@ export default {
       &__address
         text-align: center
     &-logo
+      &__block
+        width: 40%
       &__img
         height: 30px
+        width: auto
+  @media (max-width: 574px)
+    .footer
+      &-logo
+        &__block
+          width: 60%
+@media (max-width: 380px)
+  .footer
+    &-logo
+      &__block
+        width: 85%
 </style>

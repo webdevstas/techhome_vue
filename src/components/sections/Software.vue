@@ -81,6 +81,7 @@ export default {
   background-color: #fff
   height: 1500px
   color: #222222
+  overflow: hidden
 
   &-row
     display: flex
@@ -90,15 +91,16 @@ export default {
 
   &-text
     width: 60%
-    font-size: 40px
-    font-weight: bold
+    font-size: 34px
+    text-transform: uppercase
+    font-family: "RobotoBold"
 
   &-img
     width: 20%
 
 @media (max-width: 992px)
   .software-text
-    font-size: 34px
+    font-size: 30px
 
 @media (max-width: 768px)
   .software
@@ -117,9 +119,11 @@ export default {
     &-row
       flex-direction: column
     &-text
-      font-size: 28px
+      font-size: 24px
       width: 100%
       top: 20vh
+      display: block
+      height: 220px
 
     &-img
       width: 45%

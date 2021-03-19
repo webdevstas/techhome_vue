@@ -52,7 +52,6 @@ export default {
       lang: '',
       headerBg: '',
       clientWidth: document.documentElement.getBoundingClientRect().width,
-      headerHeight: 0
     };
   },
 
@@ -156,15 +155,13 @@ export default {
   },
 
   mounted() {
-    const header = document.querySelector('.header')
-
-    this.headerHeight = header.getBoundingClientRect().height
 
     this.lang = this.getCookie("lang")
+
     this.gsap.utils.toArray(".panel").forEach((panel) => {
       this.ScrollTrigger.create({
         trigger: panel,
-        start: `top ${this.headerHeight}`,
+        start: "top top",
         pin: true,
         pinSpacing: false,
         anticipatePin: 0.5,
@@ -179,7 +176,6 @@ export default {
 
     window.addEventListener('resize', () => {
       const rect = document.documentElement.getBoundingClientRect()
-      this.headerHeight = header.getBoundingClientRect().height
       this.clientWidth = rect.width
     })
   },
@@ -219,12 +215,11 @@ body
 
 section
   height: 100vh
-  padding: 15px 0
+  padding: 60px 0
 
 .section__title
   font-size: 24px
   text-align: center
-  margin-top: 0
 
 .red
   display: inline !important
@@ -242,5 +237,8 @@ section
   .container
     padding: 0 20px
 
+@media (max-width: 576px)
+  section
+    padding-top: 30px
 
 </style>

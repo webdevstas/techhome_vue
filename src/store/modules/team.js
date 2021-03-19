@@ -49,8 +49,8 @@ export default {
                     },
                     {
                         name: 'Ярослав Прокип',
-                        role: 'Sound designer',
-                        icon: '/images/kovalenko.png',
+                        role: 'Звук',
+                        icon: '/images/prokip.png',
                         insta: 'https://instagram.com/rurich777'
                     }
                 ],
@@ -102,8 +102,8 @@ export default {
                     },
                     {
                         name: 'Yaroslav Prokip',
-                        role: 'Sound designer',
-                        icon: '/images/kovalenko.png',
+                        role: 'Sound',
+                        icon: '/images/prokip.png',
                         insta: 'https://instagram.com/rurich777'
                     },
                 ],
