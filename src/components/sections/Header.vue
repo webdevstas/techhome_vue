@@ -162,8 +162,8 @@ export default {
       margin-bottom: 5px
 
 .translate-icon
-  width: 30px
-  height: auto
+  width: auto
+  height: 30px
   cursor: pointer
 
 .backdrop
@@ -195,12 +195,12 @@ export default {
 
 @media (max-width: 576px)
   .header
-    padding: 10px
-    width: calc(100vw - 20px)
+    padding: 5px
+    width: calc(100vw - 10px)
 
     &-logo
-      width: 40px
-      height: 20px
+      height: 30px
+      width: auto
 
       &__img
         height: 100%
@@ -220,7 +220,7 @@ export default {
         display: flex
         align-items: center
   .translate-icon
-    width: 20px
+    height: 25px
 //burger and left menu
   //&-menu
   //  display: none
