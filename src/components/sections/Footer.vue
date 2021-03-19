@@ -15,13 +15,13 @@
         </div>
         <div class="footer-col">
           <div class="footer-logo__block">
-            <img src="/images/th_logo.png" alt="" class="footer-logo__img"/>
+            <img src="/images/th_logo.svg" alt="" class="footer-logo__img"/>
             <img
-                src="/images/th_games_logo.png"
+                src="/images/th_games_logo.svg"
                 alt=""
                 class="footer-logo__img"/>
-            <img src="/images/th_go_logo.png" alt="" class="footer-logo__img"/>
-            <img src="/images/go_logo.png" alt="" class="footer-logo__img"/>
+            <img src="/images/th_go_logo.svg" alt="" class="footer-logo__img"/>
+            <img src="/images/go_logo.svg" alt="" class="footer-logo__img"/>
           </div>
         </div>
         <div class="footer-col"></div>
