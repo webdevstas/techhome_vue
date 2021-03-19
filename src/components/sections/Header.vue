@@ -3,7 +3,7 @@
     fontFamily: lang == 'en' ? 'SenBold' : 'RobotoBold'
   }">
     <div class="header-logo" v-scroll-to="'#firstScreen'">
-      <img src="/images/logo.svg" alt="" class="header-logo__img"/>
+      <img src="/images/logo.png" alt="" class="header-logo__img"/>
     </div>
     <div class="header-menu" ref="menu">
       <ul class="header-menu__list">
@@ -127,11 +127,13 @@ export default {
   transition: .5s
 
   &-logo
-    display: block
+    display: flex
     width: 80px
     height: auto
     cursor: pointer
-
+    align-items: center
+    &__img
+      width: 100%
   &-menu
     z-index: 200
     display: flex
@@ -199,11 +201,8 @@ export default {
     width: calc(100vw - 10px)
 
     &-logo
-      height: 30px
-      width: auto
-
-      &__img
-        height: 100%
+      height: auto
+      width: 60px
 
     &-menu
       width: -moz-available
