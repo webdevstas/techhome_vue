@@ -1,7 +1,7 @@
 import {createApp} from 'vue'
+import VueScrollTo from 'vue-scrollto'
 import App from './App.vue'
 import store from './store'
-import VueScrollTo from 'vue-scrollto'
 import gsap from './plugins/gsap'
 
 const app = createApp(App)
