@@ -8,9 +8,7 @@
             <span class="footer-contacts__country">{{ langData.country }}</span>
             <span class="footer-contacts__address">{{ langData.address }}</span>
             <span class="footer-contacts__tel">tel: <a href="tel:+78622659313">{{ langData.tel }}</a></span>
-            <span class="footer-contacts__mail">mail: <a href="mailto:tech-home@mail.ru">{{
-                langData.mail
-                                                                                         }}</a></span>
+            <span class="footer-contacts__mail">mail: <a :href="'mailto:'+langData.mail">{{langData.mail}}</a></span>
           </div>
         </div>
         <div class="footer-col">
@@ -80,11 +78,13 @@ export default {
     text-align: center
     color: #b3b3b3
     font-size: 11px
-@media (max-width: 1200px)
+
+@media (max-width: 1800px)
   .footer
     &-logo
       &__block
         width: 100%
+
 @media (max-width: 768px)
   .footer
     &-grid
@@ -96,9 +96,11 @@ export default {
 
       &__address
         text-align: center
+
     &-logo
       &__block
         width: 40%
+
       &__img
         height: 30px
         width: auto
@@ -107,6 +109,7 @@ export default {
       &-logo
         &__block
           width: 60%
+
 @media (max-width: 380px)
   .footer
     &-logo

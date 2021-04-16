@@ -7,14 +7,14 @@ export default {
                 country: 'Российская Федерация',
                 address: 'Сочи, ул. Тоннельная 2а, офис 403',
                 tel: '+7 862 265 9313',
-                mail: 'tech-home@mail.ru'
+                mail: 'th@techhome3d.ru'
             },
             en: {
                 title: 'Contact',
                 country: 'Russian Federation',
                 address: 'Sochi, Tonnelnaya str. 2A, of. 403',
                 tel: '+7 862 265 9313',
-                mail: 'tech-home@mail.ru'
+                mail: 'th@techhome3d.ru'
             }
         }
     },
