@@ -66,12 +66,12 @@ export default {
       display: flex
       flex-direction: row
       justify-content: space-around
-      width: 65%
+      width: 80%
       margin: auto
 
     &__img
       width: auto
-      height: 40px
+      height: 45px
 
   &-copyright
     width: 100%
@@ -84,7 +84,10 @@ export default {
     &-logo
       &__block
         width: 100%
-
+@media (max-width: 1500px)
+  .footer
+    &-grid
+      grid-template-columns: 2fr 2fr
 @media (max-width: 768px)
   .footer
     &-grid
@@ -99,20 +102,19 @@ export default {
 
     &-logo
       &__block
-        width: 40%
+        width: 50%
 
       &__img
-        height: 30px
+        height: 40px
         width: auto
   @media (max-width: 574px)
     .footer
       &-logo
         &__block
-          width: 60%
-
-@media (max-width: 380px)
-  .footer
-    &-logo
-      &__block
-        width: 85%
+          width: 85%
+    @media (max-width: 390px)
+    .footer
+      &-logo
+        &__block
+          width: 100%
 </style>

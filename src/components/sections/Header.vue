@@ -128,7 +128,7 @@ export default {
 
   &-logo
     display: flex
-    width: 80px
+    width: 85px
     height: auto
     cursor: pointer
     align-items: center
@@ -202,7 +202,7 @@ export default {
 
     &-logo
       height: auto
-      width: 60px
+      width: 80px
 
     &-menu
       width: -moz-available
