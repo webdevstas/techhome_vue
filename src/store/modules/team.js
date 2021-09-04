@@ -24,18 +24,6 @@ export default {
                         insta: ''
                     },
                     {
-                        name: 'Михаил Гордеев',
-                        role: 'Game designer',
-                        icon: '/images/gordeev.png',
-                        insta: ''
-                    },
-                    {
-                        name: 'Станислав Спирин',
-                        role: 'Fullstack web-разработчик',
-                        icon: '/images/spirin.png',
-                        insta: 'http://instagram.com/spirin.stas'
-                    },
-                    {
                         name: 'Олег Бабенков',
                         role: 'Программист',
                         icon: '/images/babenkov.png',
@@ -75,18 +63,6 @@ export default {
                         role: 'Artist',
                         icon: '/images/melyakin.png',
                         insta: ''
-                    },
-                    {
-                        name: 'Mikhail Gordeev',
-                        role: 'Game designer',
-                        icon: '/images/gordeev.png',
-                        insta: ''
-                    },
-                    {
-                        name: 'Stanislav Spirin',
-                        role: 'Fullstack web-developer',
-                        icon: '/images/spirin.png',
-                        insta: 'http://instagram.com/spirin.stas'
                     },
                     {
                         name: 'Oleg Babenkov',
