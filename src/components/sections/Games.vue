@@ -35,6 +35,8 @@ export default {
   background-color: #171727
   &-img
     max-width: 100%
+    &__wrap
+      text-align: center
   &-bg
     width: 100%
     height: 90%
