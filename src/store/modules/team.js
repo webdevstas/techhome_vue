@@ -39,7 +39,7 @@ export default {
                         name: 'Ярослав Прокип',
                         role: 'Звук',
                         icon: '/images/prokip.png',
-                        insta: 'https://instagram.com/rurich777'
+                        insta: 'https://www.instagram.com/rurich2777/'
                     }
                 ],
             },
@@ -80,7 +80,7 @@ export default {
                         name: 'Yaroslav Prokip',
                         role: 'Sound',
                         icon: '/images/prokip.png',
-                        insta: 'https://instagram.com/rurich777'
+                        insta: 'https://www.instagram.com/rurich2777/'
                     },
                 ],
             }
