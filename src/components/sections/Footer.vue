@@ -24,7 +24,7 @@
         <div class="footer-col"></div>
       </div>
       <div class="footer-copyright">
-        © 2021 TECHHOME GROUP - All rights reserved
+        © 2022 TECHHOME GROUP - All rights reserved
       </div>
     </div>
   </footer>
