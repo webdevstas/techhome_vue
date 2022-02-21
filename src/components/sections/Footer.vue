@@ -7,7 +7,6 @@
             <span class="footer-contacts__title">{{ langData.title }}</span>
             <span class="footer-contacts__country">{{ langData.country }}</span>
             <span class="footer-contacts__address">{{ langData.address }}</span>
-            <span class="footer-contacts__tel">tel: <a href="tel:+78622659313">{{ langData.tel }}</a></span>
             <span class="footer-contacts__mail">mail: <a :href="'mailto:'+langData.mail">{{langData.mail}}</a></span>
           </div>
         </div>
